@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caviar Louie · St. Louis Caviar Bar</title>
+<meta name="description" content="Caviar Louie. St. Louis' finest caviar experience. Tableside service, grower champagne, and celebration. Est. 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary */
+    --cl-navy:          #1B2A6B;
+    --cl-navy-deep:     #0E1A40;
+    --cl-navy-mid:      #162258;
+    /* Accent */
+    --cl-gold:          #C9A84C;
+    --cl-gold-light:    #DFC07A;
+    --cl-gold-glow:     rgba(201, 168, 76, 0.15);
+    --cl-gold-dim:      rgba(201, 168, 76, 0.08);
+    --cl-gold-border:   rgba(201, 168, 76, 0.22);
+    --cl-gold-ring:     rgba(201, 168, 76, 0.45);
+    /* Red */
+    --cl-red:           #C8102E;
+    /* Light surfaces */
+    --cl-cream:         #F9F6EF;
+    --cl-cream-dim:     rgba(249, 246, 239, 0.06);
+    /* Text */
+    --cl-text-cream:    #F0EBE0;
+    --cl-text-muted:    rgba(240, 235, 224, 0.50);
+    --cl-text-navy:     #0E1A40;
+    --cl-text-muted-light: rgba(14, 26, 64, 0.55);
+    /* Shadows */
+    --cl-shadow-sm:     0 2px 12px rgba(14, 26, 64, 0.18);
+    --cl-shadow-md:     0 8px 40px rgba(14, 26, 64, 0.28);
+    --cl-shadow-gold:   0 0 32px rgba(201, 168, 76, 0.12);
+    /* Type */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Work Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cl-cream);
+    color: var(--cl-text-navy);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* Reusable */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    margin-bottom: 12px;
+  }
+  .h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 20px;
+  }
+  .section-header { text-align: center; margin-bottom: 72px; }
+  .header-rule { width: 48px; height: 1px; background: var(--cl-gold); opacity: 0.5; margin: 0 auto; }
+  section { padding: 96px 0; }
+
+  /* Pearl textures */
+  .pearl-texture {
+    background-image: radial-gradient(circle, rgba(201, 168, 76, 0.22) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .pearl-texture-light {
+    background-image: radial-gradient(circle, rgba(27, 42, 107, 0.06) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: var(--cl-gold);
+    color: var(--cl-navy-deep);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    min-height: 48px;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.15s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { background: var(--cl-gold-light); transform: translateY(-1px); }
+  .btn-primary:focus-visible { outline: 2px solid var(--cl-gold); outline-offset: 3px; }
+
+  .btn-ghost {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--cl-gold);
+    border: 1px solid var(--cl-gold-border);
+    padding: 14px 28px;
+    border-radius: 2px;
+    min-height: 48px;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-ghost:hover { background: var(--cl-gold-glow); border-color: var(--cl-gold); }
+  .btn-ghost:focus-visible { outline: 2px solid var(--cl-gold); outline-offset: 3px; }
+
+  @keyframes cl-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.45); }
+    50%       { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+  }
+  .nav-cta-pulse { animation: cl-pulse 1.4s ease 0.6s 3; }
+
+  /* Nav */
+  #site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--cl-navy-deep);
+    border-bottom: 1px solid var(--cl-gold-border);
+    min-height: 84px;
+    transition: box-shadow 0.3s ease;
+  }
+  #site-nav.scrolled { box-shadow: var(--cl-shadow-md); }
+  .nav-inner {
+    height: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-self: start;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .nav-brand .site-wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: flex;
+    gap: 44px;
+    align-items: center;
+    list-style: none;
+    justify-self: center;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: #F0EBE0;
+    opacity: 1;
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .nav-links a:hover { color: var(--cl-gold); border-bottom-color: var(--cl-gold); }
+  .nav-cta { justify-self: end; }
+  #site-nav .nav-cta {
+    font-size: 13px;
+    padding: 16px 32px;
+    letter-spacing: 0.18em;
+  }
+  .nav-hamburger { display: none; background: none; border: none; color: var(--cl-gold); cursor: pointer; padding: 8px; }
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--cl-navy-deep);
+    border-bottom: 1px solid var(--cl-gold-border);
+    flex-direction: column;
+    padding: 16px 32px 24px;
+    gap: 16px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cl-text-cream);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cl-gold-border);
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  /* Hero */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    overflow: hidden;
+    padding: 180px 0 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 26, 64, 0.62);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-pearl {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-rings { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--cl-gold-ring);
+    pointer-events: none;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .ring-sm  { width: 400px;  height: 400px; opacity: 0.6; }
+  .ring-md  { width: 600px;  height: 600px; opacity: 0.4; }
+  .ring-lg  { width: 820px;  height: 820px; opacity: 0.2; }
+  .ring-xl  { width: 1060px; height: 1060px; opacity: 0.1; border-color: var(--cl-red); opacity: 0.08; }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 880px;
+    padding: 0 32px;
+  }
+  .hero-crest {
+    width: clamp(240px, 32vw, 380px);
+    height: auto;
+    margin: 0 auto 40px;
+    display: block;
+    filter: drop-shadow(0 12px 48px rgba(201, 168, 76, 0.22));
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow .rule { width: 40px; height: 1px; background: var(--cl-gold); opacity: 0.6; }
+  .hero-eyebrow span {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(3.6rem, 7.2vw, 5.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    color: var(--cl-text-cream);
+    margin-bottom: 24px;
+    text-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+  }
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-text-cream);
+    margin-bottom: 56px;
+    line-height: 1.8;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cl-gold);
+    opacity: 0.5;
+    animation: scroll-bounce 2.6s ease-in-out infinite;
+    z-index: 3;
+  }
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(10px); }
+  }
+  .hero-watermark {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    font-family: var(--font-body);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    opacity: 0.5;
+    z-index: 3;
+  }
+
+  /* Press marquee */
+  #press {
+    background: var(--cl-navy-mid);
+    border-top: 1px solid var(--cl-gold-border);
+    border-bottom: 1px solid var(--cl-gold-border);
+    height: 72px;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 64px;
+    animation: marquee-scroll 40s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track .quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cl-text-cream);
+    flex-shrink: 0;
+  }
+  .marquee-track .dot {
+    color: var(--cl-gold);
+    font-family: var(--font-body);
+    font-size: 14px;
+    align-self: center;
+  }
+
+  /* About */
+  #about {
+    background: var(--cl-cream);
+    text-align: center;
+  }
+  .about-pull {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--cl-text-navy);
+    max-width: 680px;
+    margin: 0 auto 80px;
+  }
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 960px;
+    margin: 0 auto 80px;
+  }
+  .mood {
+    text-align: center;
+  }
+  .mood .label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-text-navy);
+    margin-bottom: 12px;
+  }
+  .mood .rule {
+    width: 32px;
+    height: 1px;
+    background: var(--cl-gold);
+    margin: 0 auto 16px;
+  }
+  .mood .body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cl-text-muted-light);
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-top: 48px;
+    border-top: 1px solid rgba(14, 26, 64, 0.10);
+  }
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cl-text-navy);
+  }
+  .stat-item svg { color: var(--cl-gold); }
+
+  /* Menu */
+  #menu {
+    background: var(--cl-navy);
+    color: var(--cl-text-cream);
+    position: relative;
+  }
+  #menu .section-header h2 { color: var(--cl-text-cream); }
+  .menu-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .menu-columns::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--cl-gold-border);
+    transform: translateX(-0.5px);
+  }
+  .menu-col h3 {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--cl-gold-border);
+    margin-bottom: 8px;
+  }
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(249, 246, 239, 0.07);
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-item-info { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+  .menu-item-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cl-text-cream);
+  }
+  .menu-item-detail {
+    font-size: 12px;
+    color: var(--cl-text-muted);
+    letter-spacing: 0.04em;
+  }
+  .menu-item-price {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cl-gold);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+  .menu-cta { text-align: center; margin-top: 56px; }
+
+  /* Experience */
+  #experience {
+    background: var(--cl-cream);
+  }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 64px;
+    align-items: center;
+  }
+  .photo-placeholder {
+    background: var(--cl-navy-mid);
+    border: 1px solid var(--cl-gold-border);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+  .photo-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(201, 168, 76, 0.28);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .photo-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(201, 168, 76, 0.22) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .experience-content .h2 { color: var(--cl-text-navy); }
+  .experience-list { list-style: none; margin-top: 24px; }
+  .experience-list li {
+    padding: 18px 0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(14, 26, 64, 0.08);
+  }
+  .experience-list li:last-child { border-bottom: none; }
+  .experience-list .marker {
+    height: 1px;
+    background: var(--cl-gold);
+    margin-top: 10px;
+  }
+  .experience-list .title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cl-text-navy);
+    margin-bottom: 4px;
+  }
+  .experience-list .body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cl-text-muted-light);
+  }
+
+  /* Private events */
+  #events {
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    position: relative;
+    overflow: hidden;
+  }
+  #events .ring {
+    top: -10%;
+    right: -20%;
+    left: auto;
+    transform: none;
+  }
+  #events .ring-lg {
+    width: 820px; height: 820px;
+    opacity: 0.18;
+  }
+  #events .events-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 32px;
+  }
+  #events .h2 { color: var(--cl-text-cream); }
+  #events .events-intro {
+    color: var(--cl-text-muted);
+    margin-bottom: 56px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .events-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+  }
+  .form-field-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-field-group.full { grid-column: 1 / -1; }
+  .form-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.8);
+    display: block;
+  }
+  .form-field {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--cl-text-cream);
+    background: rgba(249, 246, 239, 0.05);
+    border: 1px solid var(--cl-gold-border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    width: 100%;
+    min-height: 48px;
+    outline: none;
+    transition: border-color 0.18s ease, background 0.18s ease;
+    -webkit-appearance: none;
+  }
+  .form-field:focus {
+    border-color: rgba(201, 168, 76, 0.55);
+    background: rgba(249, 246, 239, 0.09);
+  }
+  textarea.form-field { min-height: 120px; resize: vertical; line-height: 1.6; }
+  .form-submit { grid-column: 1 / -1; text-align: center; margin-top: 16px; }
+  .form-success {
+    display: none;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--cl-gold);
+    line-height: 1.6;
+    text-align: center;
+  }
+  .form-success.visible { display: block; }
+  .events-form.hidden { display: none; }
+
+  /* Footer */
+  footer {
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    position: relative;
+    padding: 96px 0 32px;
+    border-top: 1px solid var(--cl-gold-border);
+  }
+  .footer-pearl {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .footer-inner { position: relative; z-index: 2; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .footer-brand { text-align: center; margin-bottom: 64px; }
+  .footer-brand .site-logo {
+    height: 160px;
+    width: auto;
+    color: var(--cl-gold);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  .footer-brand .descriptor {
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+  }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 880px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    margin-bottom: 16px;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--cl-text-cream);
+    text-decoration: none;
+    display: block;
+  }
+  .footer-col a:hover { color: var(--cl-gold); }
+  .footer-copy {
+    border-top: 1px solid var(--cl-gold-border);
+    padding-top: 24px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--cl-text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.22s; }
+  .reveal-d3 { transition-delay: 0.34s; }
+  .reveal-d4 { transition-delay: 0.46s; }
+
+  /* Mobile */
+  @media (max-width: 1024px) {
+    .experience-grid { grid-template-columns: 1fr; }
+    .menu-columns { gap: 48px; }
+  }
+  @media (max-width: 768px) {
+    .menu-columns { grid-template-columns: 1fr; }
+    .menu-columns::before { display: none; }
+    .menu-col + .menu-col { margin-top: 24px; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 72px 0; }
+    .container { padding: 0 20px; }
+    .nav-inner { padding: 0 20px; grid-template-columns: 1fr auto; }
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: inline-flex; align-items: center; justify-content: center; justify-self: end; }
+    #hero { padding: 144px 0 96px; }
+    .hero-content { padding: 0 20px; }
+    .ring-sm  { width: 240px;  height: 240px; }
+    .ring-md  { width: 360px;  height: 360px; }
+    .ring-lg  { width: 492px;  height: 492px; }
+    .ring-xl  { width: 636px;  height: 636px; }
+    .mood-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stats-bar { gap: 24px; flex-direction: column; }
+    .events-form { grid-template-columns: 1fr; }
+    .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <span class="site-wordmark">Caviar Louie</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#events">Private Events</a></li>
+    </ul>
+    <a href="#events" class="btn-primary nav-cta nav-cta-pulse">Reserve a Table</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#experience">Experience</a>
+    <a href="#events">Private Events</a>
+    <a href="#events" class="btn-primary" style="justify-content: center; margin-top: 8px;">Reserve a Table</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-pearl pearl-texture"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-rings">
+    <div class="ring ring-xl"></div>
+    <div class="ring ring-lg"></div>
+    <div class="ring ring-md"></div>
+    <div class="ring ring-sm"></div>
+  </div>
+  <div class="hero-content">
+    <img src="Caviar_Louie.png" alt="Caviar Louie" class="hero-crest reveal">
+    <div class="hero-eyebrow reveal">
+      <span class="rule"></span>
+      <span>St. Louis, Missouri</span>
+      <span class="rule"></span>
+    </div>
+    <h1 class="hero-headline reveal">St. Louis' Finest Caviar Experience</h1>
+    <p class="hero-sub reveal">Tableside caviar service. Grower champagne. Est. 2025.</p>
+    <div class="hero-actions reveal">
+      <a href="#events" class="btn-primary">Reserve a Table</a>
+      <a href="#menu" class="btn-ghost">View the Menu</a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+  <span class="hero-watermark">St. Louis Caviar Bar</span>
+</section>
+
+<!-- PRESS MARQUEE -->
+<section id="press">
+  <div class="marquee-track" id="marquee">
+    <span class="quote">The finest caviar in St. Louis.</span><span class="dot">•</span>
+    <span class="quote">An unforgettable celebration.</span><span class="dot">•</span>
+    <span class="quote">Tableside service, impeccably done.</span><span class="dot">•</span>
+    <span class="quote">A room for every occasion.</span><span class="dot">•</span>
+    <span class="quote">Pearl by pearl, a perfect evening.</span><span class="dot">•</span>
+    <span class="quote">The finest caviar in St. Louis.</span><span class="dot">•</span>
+    <span class="quote">An unforgettable celebration.</span><span class="dot">•</span>
+    <span class="quote">Tableside service, impeccably done.</span><span class="dot">•</span>
+    <span class="quote">A room for every occasion.</span><span class="dot">•</span>
+    <span class="quote">Pearl by pearl, a perfect evening.</span><span class="dot">•</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">About</p>
+      <h2 class="h2">A Room Built for Toasts</h2>
+      <div class="header-rule"></div>
+    </div>
+    <p class="about-pull reveal reveal-d1">A room built for the toasts you remember. The tableside ceremony of caviar, the warmth of the room, the people across from you.</p>
+
+    <div class="mood-grid">
+      <div class="mood reveal">
+        <p class="label">Date Night</p>
+        <div class="rule"></div>
+        <p class="body">The first course should mean something. A pearl-by-pearl beginning to the kind of night you tell people about.</p>
+      </div>
+      <div class="mood reveal reveal-d1">
+        <p class="label">Birthdays</p>
+        <div class="rule"></div>
+        <p class="body">The candle is for the cake. The toast is for the table. The caviar is for the moment in between.</p>
+      </div>
+      <div class="mood reveal reveal-d2">
+        <p class="label">Celebrations</p>
+        <div class="rule"></div>
+        <p class="body">Engagements, anniversaries, promotions. Mark the moment with the food that has marked moments for centuries.</p>
+      </div>
+    </div>
+
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
+        Est. 2025 · St. Louis, MO
+      </div>
+      <div class="stat-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 6c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+        Sustainable Sourcing
+      </div>
+      <div class="stat-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Private Events Welcome
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">The Menu</p>
+      <h2 class="h2">By the Tin, By the Bottle</h2>
+      <div class="header-rule"></div>
+    </div>
+
+    <div class="menu-columns">
+      <div class="menu-col reveal">
+        <h3>Caviar Service</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Ossetra Reserve</span>
+            <span class="menu-item-detail">30g, accoutrements</span>
+          </div>
+          <span class="menu-item-price">$85</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Kaluga Hybrid</span>
+            <span class="menu-item-detail">50g, accoutrements</span>
+          </div>
+          <span class="menu-item-price">$120</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Baerii Classic</span>
+            <span class="menu-item-detail">30g, accoutrements</span>
+          </div>
+          <span class="menu-item-price">$65</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">The Louie Service</span>
+            <span class="menu-item-detail">60g duo, full accompaniments</span>
+          </div>
+          <span class="menu-item-price">$185</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Grand Tasting</span>
+            <span class="menu-item-detail">Chef's trio, 90g total</span>
+          </div>
+          <span class="menu-item-price">$265</span>
+        </div>
+      </div>
+
+      <div class="menu-col reveal reveal-d1">
+        <h3>Accompaniments &amp; Champagne</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Classic Accoutrements</span>
+            <span class="menu-item-detail">Blinis, crème fraîche, egg, chives</span>
+          </div>
+          <span class="menu-item-price">$18</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Champagne by the Glass</span>
+            <span class="menu-item-detail">Rotating grower selections</span>
+          </div>
+          <span class="menu-item-price">$24+</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Bottle Service</span>
+            <span class="menu-item-detail">Veuve, Bollinger, Dom by request</span>
+          </div>
+          <span class="menu-item-price">$95+</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Oysters on the Half Shell</span>
+            <span class="menu-item-detail">Half dozen, market catch</span>
+          </div>
+          <span class="menu-item-price">$28</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Foie Gras Toast</span>
+            <span class="menu-item-detail">Torchon, brioche, fig compote</span>
+          </div>
+          <span class="menu-item-price">$32</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-cta">
+      <a href="#" class="btn-ghost">Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="experience-grid">
+      <div class="photo-placeholder reveal"></div>
+      <div class="experience-content reveal reveal-d1">
+        <p class="eyebrow" style="color: var(--cl-text-muted-light);">The Experience</p>
+        <h2 class="h2">Pearl by pearl, served at your table.</h2>
+        <ul class="experience-list">
+          <li>
+            <div class="marker"></div>
+            <div>
+              <div class="title">Private Table Service</div>
+              <div class="body">Caviar served tableside. The traditional ceremony, performed quietly.</div>
+            </div>
+          </li>
+          <li>
+            <div class="marker"></div>
+            <div>
+              <div class="title">Premium Sourcing</div>
+              <div class="body">Ossetra, Kaluga, Baerii. Sustainable houses we visit ourselves.</div>
+            </div>
+          </li>
+          <li>
+            <div class="marker"></div>
+            <div>
+              <div class="title">Intimate Atmosphere</div>
+              <div class="body">Twenty-eight seats. Warm light. The kind of room that lowers your voice.</div>
+            </div>
+          </li>
+          <li>
+            <div class="marker"></div>
+            <div>
+              <div class="title">Celebration Packages</div>
+              <div class="body">Birthdays, engagements, anniversaries. The pearl service for milestone nights.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE EVENTS -->
+<section id="events">
+  <div class="ring ring-lg"></div>
+  <div class="events-inner">
+    <div class="section-header reveal">
+      <p class="eyebrow">Private Events</p>
+      <h2 class="h2">Host Your Celebration</h2>
+      <div class="header-rule"></div>
+    </div>
+    <p class="events-intro reveal reveal-d1">Private events for parties of eight to forty. Birthdays, anniversaries, corporate dinners, engagements. Tell us the night you are imagining.</p>
+
+    <form class="events-form reveal reveal-d2" id="events-form">
+      <div class="form-field-group">
+        <label class="form-label" for="ev-name">Name</label>
+        <input class="form-field" type="text" id="ev-name" name="name" required>
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="ev-email">Email</label>
+        <input class="form-field" type="email" id="ev-email" name="email" required>
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="ev-phone">Phone</label>
+        <input class="form-field" type="tel" id="ev-phone" name="phone">
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="ev-date">Event Date</label>
+        <input class="form-field" type="text" id="ev-date" name="date" placeholder="MM / DD / YYYY">
+      </div>
+      <div class="form-field-group full">
+        <label class="form-label" for="ev-party">Party Size</label>
+        <input class="form-field" type="number" id="ev-party" name="party" min="2" max="40">
+      </div>
+      <div class="form-field-group full">
+        <label class="form-label" for="ev-message">Message</label>
+        <textarea class="form-field" id="ev-message" name="message" rows="4" placeholder="Tell us about the night you are planning."></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+    <p class="form-success" id="form-success">Thank you. We'll be in touch shortly.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-pearl pearl-texture"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Caviar_Louie.png" alt="Caviar Louie" class="site-logo">
+      <div class="descriptor">St. Louis Caviar Bar</div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Tuesday to Saturday</p>
+        <p>5:00pm to 11:00pm</p>
+        <p>Closed Sunday and Monday</p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>St. Louis, Missouri</p>
+        <p><a href="mailto:hello@caviarlouie.com">hello@caviarlouie.com</a></p>
+        <p><a href="tel:+13145550000">(314) 555-0000</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <p><a href="https://instagram.com/caviarlouie" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="#events">Private Events</a></p>
+        <p><a href="#menu">Menu</a></p>
+      </div>
+    </div>
+
+    <div class="footer-copy">© 2025 Caviar Louie. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    // Nav shadow on scroll
+    var nav = document.getElementById('site-nav');
+    function onScroll() {
+      if (window.scrollY > 16) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    var hamburger = document.getElementById('nav-hamburger');
+    var mobile = document.getElementById('nav-mobile');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        mobile.classList.toggle('open');
+      });
+      mobile.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { mobile.classList.remove('open'); });
+      });
+    }
+
+    // Reveal observer
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    // Hero elements fire immediately
+    document.querySelectorAll('#hero .reveal').forEach(function (el, i) {
+      setTimeout(function () { el.classList.add('visible'); }, 80 + i * 120);
+    });
+
+    // Form
+    var form = document.getElementById('events-form');
+    var success = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.classList.add('hidden');
+        success.classList.add('visible');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

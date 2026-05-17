@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Symlinked personal voice doc. Not portable, not for public repo.
+CLAUDE.md
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.log

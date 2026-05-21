@@ -750,22 +750,22 @@
   .footer-cols {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
-    max-width: 560px;
+    gap: 80px;
+    max-width: 640px;
     margin: 0 auto 64px;
     text-align: center;
   }
   .footer-col h4 {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.20em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--cl-gold);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
   .footer-col p, .footer-col a {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.75;
     color: var(--cl-text-cream);
     text-decoration: none;
@@ -793,22 +793,22 @@
     text-align: center;
   }
   .about-letter {
-    max-width: 720px;
+    max-width: 880px;
     margin: 0 auto;
     text-align: center;
   }
   .about-letter p {
     font-family: var(--font-body);
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 1.85;
+    line-height: 1.75;
     color: var(--cl-text-navy);
     margin-bottom: 24px;
   }
   .about-letter p:first-of-type {
-    font-size: 1.2rem;
+    font-size: clamp(1.4rem, 2.8vw, 1.8rem);
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 32px;
   }
   .about-letter p:last-child { margin-bottom: 0; }

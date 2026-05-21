@@ -873,10 +873,10 @@
   .occasions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
+    gap: 0;
     width: 100%;
   }
-  .occasion {
+  .occasion-tile {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -896,10 +896,37 @@
     align-items: center;
     justify-content: center;
   }
-  .occasion:hover {
+  .occasion-tile:hover {
     color: var(--cl-gold);
     background: rgba(201, 168, 76, 0.04);
     border-color: rgba(201, 168, 76, 0.85);
+  }
+  .occasion-tile:last-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 21 / 6;
+    min-height: 220px;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .occasion-tile:last-child:hover {
+    background: rgba(201, 168, 76, 0.14);
+  }
+  .banner-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    line-height: 1;
+  }
+  .banner-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
   }
   .occasions-tag {
     text-align: center;
@@ -1000,7 +1027,13 @@
     .menu-columns { grid-template-columns: 1fr; }
     .menu-columns::before { display: none; }
     .menu-col + .menu-col { margin-top: 24px; }
-    .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+    .occasions-grid { grid-template-columns: 1fr; }
+    .occasion-tile:last-child {
+      grid-column: auto;
+      aspect-ratio: auto;
+      min-height: 160px;
+    }
+    .banner-eyebrow { font-size: 10px; }
     .steps { grid-template-columns: 1fr; }
     .step:not(:last-child)::after {
       display: none;
@@ -1141,12 +1174,16 @@
   <div class="occasions-pearl pearl-texture"></div>
   <div class="container">
     <div class="occasions-grid reveal">
-      <a href="#events" class="occasion">Pop-Ups</a>
-      <a href="#events" class="occasion">Soirées</a>
-      <a href="#events" class="occasion">Happy Hours</a>
-      <a href="#events" class="occasion">Weddings</a>
-      <a href="#events" class="occasion">Graduations</a>
-      <a href="#events" class="occasion">Birthdays</a>
+      <a href="#events" class="occasion-tile">Pop-Ups</a>
+      <a href="#events" class="occasion-tile">Soirées</a>
+      <a href="#events" class="occasion-tile">Happy Hours</a>
+      <a href="#events" class="occasion-tile">Corporate</a>
+      <a href="#events" class="occasion-tile">Weddings</a>
+      <a href="#events" class="occasion-tile">Graduations</a>
+      <a href="#events" class="occasion-tile">
+        <span class="banner-eyebrow">The Celebration That Started It All</span>
+        <span class="banner-label">Birthdays</span>
+      </a>
     </div>
     <p class="occasions-tag reveal reveal-d1"><a href="#events" class="btn-ghost">Tell us about yours.</a></p>
   </div>

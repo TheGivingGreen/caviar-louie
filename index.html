@@ -866,9 +866,9 @@
   .occasions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
     width: 100%;
   }
-  .occasion { min-width: 0; }
   .occasion {
     font-family: var(--font-display);
     font-weight: 700;
@@ -879,7 +879,10 @@
     text-align: center;
     color: var(--cl-text-cream);
     text-decoration: none;
-    padding: clamp(40px, 5vw, 64px) 24px;
+    padding: 40px 24px;
+    min-height: 160px;
+    min-width: 0;
+    overflow: hidden;
     border: 2px solid rgba(201, 168, 76, 0.45);
     transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     display: flex;

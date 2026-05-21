@@ -1231,7 +1231,10 @@
     </div>
     <p class="events-intro reveal reveal-d1">Private events for parties of eight to forty. Birthdays, anniversaries, corporate dinners, engagements. Tell us the night you are imagining.</p>
 
-    <form class="events-form reveal reveal-d2" id="events-form">
+    <form class="events-form reveal reveal-d2" id="events-form" action="https://formspree.io/f/mdajgwyw" method="POST">
+      <input type="hidden" name="_replyto" value="hello@caviarlouie.com">
+      <input type="hidden" name="_subject" value="New Caviar Louie Event Inquiry">
+      <input type="hidden" name="_next" value="https://caviarlouie-preview.netlify.app/?success=true">
       <div class="form-field-group">
         <label class="form-label" for="ev-name">Name</label>
         <input class="form-field" type="text" id="ev-name" name="name" required>
@@ -1246,11 +1249,11 @@
       </div>
       <div class="form-field-group">
         <label class="form-label" for="ev-date">Event Date</label>
-        <input class="form-field" type="text" id="ev-date" name="date" placeholder="MM / DD / YYYY">
+        <input class="form-field" type="text" id="ev-date" name="event_date" placeholder="MM / DD / YYYY">
       </div>
       <div class="form-field-group full">
         <label class="form-label" for="ev-party">Party Size</label>
-        <input class="form-field" type="number" id="ev-party" name="party" min="2" max="40">
+        <input class="form-field" type="number" id="ev-party" name="party_size" min="2" max="40">
       </div>
       <div class="form-field-group full">
         <label class="form-label" for="ev-message">Message</label>
@@ -1331,16 +1334,6 @@
       setTimeout(function () { el.classList.add('visible'); }, 80 + i * 120);
     });
 
-    // Form
-    var form = document.getElementById('events-form');
-    var success = document.getElementById('form-success');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        form.classList.add('hidden');
-        success.classList.add('visible');
-      });
-    }
   })();
 </script>
 

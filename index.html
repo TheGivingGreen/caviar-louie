@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root {
     /* Primary */
@@ -334,10 +335,10 @@
   .hero-sub {
     font-family: var(--font-body);
     font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.22em;
+    font-weight: 300;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--cl-text-cream);
+    color: var(--cl-text-muted);
     margin-bottom: 56px;
     line-height: 1.8;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
@@ -410,7 +411,18 @@
   #about {
     background: var(--cl-cream);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 128px 0;
   }
+  #about .container { max-width: 960px; }
+  .about-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #about .container { position: relative; z-index: 2; }
   .about-pull {
     font-family: var(--font-display);
     font-style: italic;
@@ -560,6 +572,13 @@
     overflow: hidden;
     aspect-ratio: 4 / 3;
     width: 100%;
+  }
+  .experience-video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--cl-gold-border);
+    display: block;
   }
   .photo-placeholder::before {
     content: '';
@@ -723,9 +742,9 @@
   }
   .footer-cols {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 48px;
-    max-width: 880px;
+    max-width: 560px;
     margin: 0 auto 64px;
     text-align: center;
   }
@@ -756,6 +775,192 @@
     letter-spacing: 0.04em;
   }
 
+  /* About greeting, letter, signature */
+  .greeting {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    color: var(--cl-text-navy);
+    text-align: center;
+  }
+  .about-letter {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-letter p {
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.85;
+    color: var(--cl-text-navy);
+    margin-bottom: 24px;
+  }
+  .about-letter p:first-of-type {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .about-letter p:last-child { margin-bottom: 0; }
+  .letter-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--cl-gold);
+    margin: 32px auto;
+  }
+  .signature {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--cl-gold);
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .signature span { display: block; }
+  .signature .sig-name {
+    color: var(--cl-navy);
+    font-family: 'Great Vibes', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-top: 12px;
+  }
+  .signature .xoxo {
+    font-family: 'Great Vibes', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: 0;
+    margin-top: 8px;
+    -webkit-text-stroke: 0.5px currentColor;
+  }
+
+  /* Occasions */
+  #occasions {
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .occasions-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #occasions .container { position: relative; z-index: 2; }
+  .occasions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .occasion {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--cl-text-cream);
+    text-decoration: none;
+    padding: clamp(40px, 5vw, 64px) 24px;
+    border: 2px solid rgba(201, 168, 76, 0.45);
+    transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .occasion:hover {
+    color: var(--cl-gold);
+    background: rgba(201, 168, 76, 0.04);
+    border-color: rgba(201, 168, 76, 0.85);
+  }
+  .occasions-tag {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .occasions-tag .btn-ghost {
+    padding: 14px 32px;
+    letter-spacing: 0.18em;
+  }
+
+  /* How It Works */
+  #how-it-works {
+    background: var(--cl-cream);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+  }
+  .how-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #how-it-works .container { position: relative; z-index: 2; }
+  #how-it-works .h2 { color: var(--cl-text-navy); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .step {
+    padding: 16px 48px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 24px; bottom: 24px;
+    width: 1px;
+    background: rgba(201, 168, 76, 0.25);
+  }
+  .step-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 5.5rem;
+    line-height: 1;
+    color: var(--cl-gold);
+    margin-bottom: 20px;
+  }
+  .step-head {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cl-text-navy);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .step-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--cl-text-navy);
+  }
+  .how-cta {
+    text-align: center;
+    margin-top: 64px;
+  }
+  .btn-ghost-on-cream {
+    color: var(--cl-navy-deep);
+    border-color: rgba(14, 26, 64, 0.30);
+  }
+  .btn-ghost-on-cream:hover {
+    border-color: var(--cl-navy-deep);
+    background: rgba(14, 26, 64, 0.04);
+  }
+
   /* Reveal animations */
   .reveal {
     opacity: 0;
@@ -777,6 +982,14 @@
     .menu-columns { grid-template-columns: 1fr; }
     .menu-columns::before { display: none; }
     .menu-col + .menu-col { margin-top: 24px; }
+    .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .step:not(:last-child)::after {
+      display: none;
+    }
+    .step + .step {
+      margin-top: 32px;
+    }
   }
   @media (max-width: 640px) {
     section { padding: 72px 0; }
@@ -792,6 +1005,7 @@
     .ring-xl  { width: 636px;  height: 636px; }
     .mood-grid { grid-template-columns: 1fr; gap: 32px; }
     .stats-bar { gap: 24px; flex-direction: column; }
+    .occasions-grid { grid-template-columns: 1fr; }
     .events-form { grid-template-columns: 1fr; }
     .footer-cols { grid-template-columns: 1fr; gap: 32px; }
   }
@@ -807,9 +1021,9 @@
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#events">Private Events</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#events" class="btn-primary nav-cta nav-cta-pulse">Reserve a Table</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
@@ -818,9 +1032,9 @@
   </div>
   <div class="nav-mobile" id="nav-mobile">
     <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#experience">Experience</a>
-    <a href="#events">Private Events</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
     <a href="#events" class="btn-primary" style="justify-content: center; margin-top: 8px;">Reserve a Table</a>
   </div>
 </nav>
@@ -847,7 +1061,7 @@
       <span class="rule"></span>
     </div>
     <h1 class="hero-headline reveal">St. Louis' Finest Caviar Experience</h1>
-    <p class="hero-sub reveal">Tableside caviar service. Grower champagne. Est. 2025.</p>
+    <p class="hero-sub reveal">St. Louis' Mobile Caviar Experience. We come to you.</p>
     <div class="hero-actions reveal">
       <a href="#events" class="btn-primary">Reserve a Table</a>
       <a href="#menu" class="btn-ghost">View the Menu</a>
@@ -877,140 +1091,72 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="about-pearl pearl-texture-light"></div>
   <div class="container">
     <div class="section-header reveal">
       <p class="eyebrow">About</p>
-      <h2 class="h2">A Room Built for Toasts</h2>
-      <div class="header-rule"></div>
+      <p class="greeting">Hi there,</p>
     </div>
-    <p class="about-pull reveal reveal-d1">A room built for the toasts you remember. The tableside ceremony of caviar, the warmth of the room, the people across from you.</p>
-
-    <div class="mood-grid">
-      <div class="mood reveal">
-        <p class="label">Date Night</p>
-        <div class="rule"></div>
-        <p class="body">The first course should mean something. A pearl-by-pearl beginning to the kind of night you tell people about.</p>
-      </div>
-      <div class="mood reveal reveal-d1">
-        <p class="label">Birthdays</p>
-        <div class="rule"></div>
-        <p class="body">The candle is for the cake. The toast is for the table. The caviar is for the moment in between.</p>
-      </div>
-      <div class="mood reveal reveal-d2">
-        <p class="label">Celebrations</p>
-        <div class="rule"></div>
-        <p class="body">Engagements, anniversaries, promotions. Mark the moment with the food that has marked moments for centuries.</p>
-      </div>
+    <div class="about-letter reveal reveal-d1">
+      <p>Welcome to Caviar Louie. We're so happy you're here.</p>
+      <p>We believe caviar is the tin of magic that transforms a beautiful gathering into an unforgettable moment. Elegant, indulgent, and effortlessly celebratory, it has a way of making every occasion feel just a little more iconic.</p>
+      <p>From rooftop soirées, pop-ups, brunches, and food fairs to weddings, graduations, mitzvahs, and every celebration worth celebrating, we bring the caviar experience directly to you.</p>
+      <p>Whether you're planning an intimate dinner or a full-scale event, we'll customize every detail to match your vision and create a moment that feels truly special.</p>
+      <p>Let us bring the final touch of elegance to your next celebration.</p>
     </div>
-
-    <div class="stats-bar reveal">
-      <div class="stat-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
-        Est. 2025 · St. Louis, MO
-      </div>
-      <div class="stat-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 6c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
-        Sustainable Sourcing
-      </div>
-      <div class="stat-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Private Events Welcome
-      </div>
-    </div>
+    <div class="letter-divider reveal reveal-d2" aria-hidden="true"></div>
+    <p class="signature reveal reveal-d2">
+      <span>With love,</span>
+      <span class="sig-name">Sofia and Sloane</span>
+      <span class="xoxo">xoxo</span>
+    </p>
   </div>
 </section>
 
-<!-- MENU -->
-<section id="menu">
+<!-- OCCASIONS -->
+<section id="occasions">
+  <div class="occasions-pearl pearl-texture"></div>
+  <div class="container">
+    <div class="occasions-grid reveal">
+      <a href="#events" class="occasion">Birthdays</a>
+      <a href="#events" class="occasion">Bachelorettes</a>
+      <a href="#events" class="occasion">Weddings</a>
+      <a href="#events" class="occasion">Mitzvahs</a>
+      <a href="#events" class="occasion">Corporate</a>
+      <a href="#events" class="occasion">Pop-Ups</a>
+    </div>
+    <p class="occasions-tag reveal reveal-d1"><a href="#events" class="btn-ghost">Tell us about yours.</a></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="how-pearl pearl-texture-light"></div>
   <div class="container">
     <div class="section-header reveal">
-      <p class="eyebrow">The Menu</p>
-      <h2 class="h2">By the Tin, By the Bottle</h2>
+      <p class="eyebrow">The Process</p>
+      <h2 class="h2">How It Works</h2>
       <div class="header-rule"></div>
     </div>
-
-    <div class="menu-columns">
-      <div class="menu-col reveal">
-        <h3>Caviar Service</h3>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Ossetra Reserve</span>
-            <span class="menu-item-detail">30g, accoutrements</span>
-          </div>
-          <span class="menu-item-price">$85</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Kaluga Hybrid</span>
-            <span class="menu-item-detail">50g, accoutrements</span>
-          </div>
-          <span class="menu-item-price">$120</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Baerii Classic</span>
-            <span class="menu-item-detail">30g, accoutrements</span>
-          </div>
-          <span class="menu-item-price">$65</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">The Louie Service</span>
-            <span class="menu-item-detail">60g duo, full accompaniments</span>
-          </div>
-          <span class="menu-item-price">$185</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Grand Tasting</span>
-            <span class="menu-item-detail">Chef's trio, 90g total</span>
-          </div>
-          <span class="menu-item-price">$265</span>
-        </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-head">Tell Us About Your Event</h3>
+        <p class="step-body">Fill out our inquiry form with your date, guest count, and vision. No detail is too small.</p>
       </div>
-
-      <div class="menu-col reveal reveal-d1">
-        <h3>Accompaniments &amp; Champagne</h3>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Classic Accoutrements</span>
-            <span class="menu-item-detail">Blinis, crème fraîche, egg, chives</span>
-          </div>
-          <span class="menu-item-price">$18</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Champagne by the Glass</span>
-            <span class="menu-item-detail">Rotating grower selections</span>
-          </div>
-          <span class="menu-item-price">$24+</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Bottle Service</span>
-            <span class="menu-item-detail">Veuve, Bollinger, Dom by request</span>
-          </div>
-          <span class="menu-item-price">$95+</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Oysters on the Half Shell</span>
-            <span class="menu-item-detail">Half dozen, market catch</span>
-          </div>
-          <span class="menu-item-price">$28</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <span class="menu-item-name">Foie Gras Toast</span>
-            <span class="menu-item-detail">Torchon, brioche, fig compote</span>
-          </div>
-          <span class="menu-item-price">$32</span>
-        </div>
+      <div class="step reveal reveal-d1">
+        <div class="step-num">02</div>
+        <h3 class="step-head">We Handle Everything</h3>
+        <p class="step-body">We customize your caviar experience from start to finish. You focus on your guests. We handle the rest.</p>
+      </div>
+      <div class="step reveal reveal-d2">
+        <div class="step-num">03</div>
+        <h3 class="step-head">We Show Up. You Celebrate.</h3>
+        <p class="step-body">Our team arrives, sets up, and delivers a full tableside caviar experience your guests will never forget.</p>
       </div>
     </div>
-
-    <div class="menu-cta">
-      <a href="#" class="btn-ghost">Full Menu</a>
+    <div class="how-cta reveal reveal-d3">
+      <a href="#events" class="btn-ghost btn-ghost-on-cream">Book Your Experience</a>
     </div>
   </div>
 </section>
@@ -1019,37 +1165,39 @@
 <section id="experience">
   <div class="container">
     <div class="experience-grid">
-      <div class="photo-placeholder reveal"></div>
+      <video class="experience-video reveal" autoplay muted loop playsinline>
+        <source src="product.mp4" type="video/mp4">
+      </video>
       <div class="experience-content reveal reveal-d1">
         <p class="eyebrow" style="color: var(--cl-text-muted-light);">The Experience</p>
-        <h2 class="h2">Pearl by pearl, served at your table.</h2>
+        <h2 class="h2">Pearl by pearl, we come to you.</h2>
         <ul class="experience-list">
           <li>
             <div class="marker"></div>
             <div>
-              <div class="title">Private Table Service</div>
-              <div class="body">Caviar served tableside. The traditional ceremony, performed quietly.</div>
+              <div class="title">We Come To You</div>
+              <div class="body">Your venue, your vibe, your guest list. We handle everything else.</div>
             </div>
           </li>
           <li>
             <div class="marker"></div>
             <div>
-              <div class="title">Premium Sourcing</div>
-              <div class="body">Ossetra, Kaluga, Baerii. Sustainable houses we visit ourselves.</div>
+              <div class="title">Every Detail Handled</div>
+              <div class="body">From setup to service, we manage everything so you don't have to.</div>
             </div>
           </li>
           <li>
             <div class="marker"></div>
             <div>
-              <div class="title">Intimate Atmosphere</div>
-              <div class="body">Twenty-eight seats. Warm light. The kind of room that lowers your voice.</div>
+              <div class="title">Built Around Your Vision</div>
+              <div class="body">No two experiences are the same. Every booking is customized.</div>
             </div>
           </li>
           <li>
             <div class="marker"></div>
             <div>
-              <div class="title">Celebration Packages</div>
-              <div class="body">Birthdays, engagements, anniversaries. The pearl service for milestone nights.</div>
+              <div class="title">For Every Celebration</div>
+              <div class="body">Birthdays, bachelorettes, weddings, mitzvahs, pop-ups and everything in between.</div>
             </div>
           </li>
         </ul>
@@ -1103,7 +1251,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
   <div class="footer-pearl pearl-texture"></div>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -1113,22 +1261,12 @@
 
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>Hours</h4>
-        <p>Tuesday to Saturday</p>
-        <p>5:00pm to 11:00pm</p>
-        <p>Closed Sunday and Monday</p>
-      </div>
-      <div class="footer-col">
-        <h4>Location</h4>
-        <p>St. Louis, Missouri</p>
-        <p><a href="mailto:hello@caviarlouie.com">hello@caviarlouie.com</a></p>
-        <p><a href="tel:+13145550000">(314) 555-0000</a></p>
+        <h4>Contact</h4>
+        <p><a href="mailto:caviarlouie@gmail.com">caviarlouie@gmail.com</a></p>
       </div>
       <div class="footer-col">
         <h4>Social</h4>
         <p><a href="https://instagram.com/caviarlouie" target="_blank" rel="noopener">Instagram</a></p>
-        <p><a href="#events">Private Events</a></p>
-        <p><a href="#menu">Menu</a></p>
       </div>
     </div>
 

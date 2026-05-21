@@ -6,14 +6,14 @@ This repo holds the single-page marketing site.
 
 ## Files
 
-- `caviar-louie.html`. The site. Single HTML file, embedded CSS and JS.
+- `index.html`. The site. Single HTML file, embedded CSS and JS.
 - `Caviar_Louie.png`. The crest logo (transparent background).
 - `hero.mp4`. The hero background video. Muted, looped, autoplay.
 - `CAVIAR-LOUIE-DESIGN.md`. Full design system. Color tokens, typography, components, section architecture. The AI agent reference for any future builds or revisions.
 
 ## View it
 
-Open `caviar-louie.html` in any modern browser. No build step. No server required.
+Open `index.html` in any modern browser. No build step. No server required.
 
 ## Edit it
 

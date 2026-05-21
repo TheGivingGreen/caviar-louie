@@ -856,11 +856,19 @@
     pointer-events: none;
     z-index: 0;
   }
-  #occasions .container { position: relative; z-index: 2; }
+  #occasions .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
   .occasions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
   }
+  .occasion { min-width: 0; }
   .occasion {
     font-family: var(--font-display);
     font-weight: 700;
@@ -1006,6 +1014,7 @@
     .mood-grid { grid-template-columns: 1fr; gap: 32px; }
     .stats-bar { gap: 24px; flex-direction: column; }
     .occasions-grid { grid-template-columns: 1fr; }
+    #occasions .container { padding: 0 20px; }
     .events-form { grid-template-columns: 1fr; }
     .footer-cols { grid-template-columns: 1fr; gap: 32px; }
   }

@@ -415,7 +415,13 @@
     overflow: hidden;
     padding: 128px 0;
   }
-  #about .container { max-width: 960px; }
+  #about .container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   .about-pearl {
     position: absolute;
     inset: 0;
@@ -954,8 +960,11 @@
     position: relative;
     z-index: 2;
     display: block;
+    width: 100%;
     max-width: 1160px;
     margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   #how-it-works .h2 { color: var(--cl-text-navy); }
   .steps {

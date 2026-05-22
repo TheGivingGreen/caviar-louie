@@ -786,6 +786,23 @@
     display: block;
   }
   .footer-col a:hover { color: var(--cl-gold); }
+  .footer-col .footer-email {
+    display: inline-block;
+    border: 1px solid var(--cl-gold-border);
+    border-radius: 2px;
+    padding: 8px 20px;
+    color: var(--cl-gold);
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .footer-col .footer-email:hover {
+    background: var(--cl-gold-glow);
+    border-color: var(--cl-gold);
+    color: var(--cl-gold-light);
+  }
   .footer-social {
     display: inline-flex;
     gap: 28px;
@@ -1386,7 +1403,7 @@
     <div class="footer-cols">
       <div class="footer-col">
         <h4>Contact</h4>
-        <p><a href="mailto:hello@caviarlouie.com">hello@caviarlouie.com</a></p>
+        <p><a href="mailto:hello@caviarlouie.com" class="footer-email">hello@caviarlouie.com</a></p>
       </div>
       <div class="footer-col">
         <h4>Social</h4>

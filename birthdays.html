@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birthdays · Caviar Louie · St. Louis Mobile Caviar Bar</title>
+<meta name="description" content="Birthdays caviar service from Caviar Louie, St. Louis' only mobile caviar bar. Another year older. Infinitely more fabulous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cl-navy: #1B2A6B;
+    --cl-navy-deep: #0E1A40;
+    --cl-navy-mid: #162258;
+    --cl-gold: #C9A84C;
+    --cl-gold-light: #DFC07A;
+    --cl-gold-glow: rgba(201, 168, 76, 0.15);
+    --cl-gold-border: rgba(201, 168, 76, 0.22);
+    --cl-cream: #F9F6EF;
+    --cl-text-cream: #F0EBE0;
+    --cl-text-muted: rgba(240, 235, 224, 0.50);
+    --cl-text-navy: #0E1A40;
+    --cl-text-muted-light: rgba(14, 26, 64, 0.55);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cl-cream);
+    color: var(--cl-text-navy);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+  .pearl-texture {
+    background-image: radial-gradient(circle, rgba(201, 168, 76, 0.22) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .pearl-texture-light {
+    background-image: radial-gradient(circle, rgba(27, 42, 107, 0.06) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: var(--cl-gold);
+    color: var(--cl-navy-deep);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    min-height: 48px;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.15s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary:hover { background: var(--cl-gold-light); transform: translateY(-1px); }
+  .btn-ghost {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--cl-gold);
+    border: 1px solid var(--cl-gold-border);
+    padding: 14px 28px;
+    border-radius: 2px;
+    min-height: 48px;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-ghost:hover { background: var(--cl-gold-glow); border-color: var(--cl-gold); }
+  .btn-ghost-on-cream {
+    color: var(--cl-navy-deep);
+    border-color: rgba(14, 26, 64, 0.30);
+  }
+  .btn-ghost-on-cream:hover {
+    background: rgba(14, 26, 64, 0.04);
+    border-color: var(--cl-navy-deep);
+  }
+
+  /* Nav */
+  #site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--cl-navy-deep);
+    border-bottom: 1px solid var(--cl-gold-border);
+    min-height: 84px;
+    transition: box-shadow 0.3s ease;
+  }
+  #site-nav.scrolled { box-shadow: 0 8px 40px rgba(14, 26, 64, 0.28); }
+  .nav-inner {
+    min-height: 84px;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-self: start;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .nav-brand .site-wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: flex;
+    gap: 44px;
+    align-items: center;
+    list-style: none;
+    justify-self: center;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: #F0EBE0;
+    opacity: 1;
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .nav-links a:hover { color: var(--cl-gold); border-bottom-color: var(--cl-gold); }
+  .nav-cta { justify-self: end; }
+  #site-nav .nav-cta {
+    font-size: 13px;
+    padding: 16px 32px;
+    letter-spacing: 0.18em;
+  }
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cl-gold);
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--cl-navy-deep);
+    border-bottom: 1px solid var(--cl-gold-border);
+    flex-direction: column;
+    padding: 16px 32px 24px;
+    gap: 16px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cl-text-cream);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cl-gold-border);
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  /* Page hero */
+  .page-hero {
+    position: relative;
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    overflow: hidden;
+    padding: 160px 40px 96px;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-hero-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 880px;
+  }
+  .page-hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    margin-bottom: 24px;
+  }
+  .page-hero-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--cl-text-cream);
+    margin-bottom: 24px;
+  }
+  .page-hero-subhead {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cl-text-muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .page-hero-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--cl-gold);
+    margin: 0 auto;
+  }
+
+  /* Copy section */
+  .page-copy {
+    background: var(--cl-cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-copy .pearl-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page-copy-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 96px 40px;
+    text-align: center;
+  }
+  .page-copy .italic-line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    line-height: 1.5;
+    color: var(--cl-text-navy);
+  }
+  .page-copy .opener { margin-bottom: 32px; }
+  .page-copy .closer { margin-top: 32px; }
+  .page-copy .body p {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--cl-text-navy);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .page-copy .body p:last-child { margin-bottom: 0; }
+  .page-copy-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--cl-gold);
+    margin: 32px auto 0;
+  }
+
+  /* Photo placeholder */
+  .page-photo {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--cl-navy-mid);
+    border-top: 1px solid var(--cl-gold-border);
+    border-bottom: 1px solid var(--cl-gold-border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-photo-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page-photo-label {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--cl-text-muted);
+    font-size: 1.2rem;
+  }
+
+  /* Form section */
+  .page-form {
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    position: relative;
+    overflow: hidden;
+    padding: 96px 40px;
+  }
+  .page-form-pearl {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page-form-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .page-form-eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+    margin-bottom: 16px;
+  }
+  .page-form-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--cl-text-cream);
+    margin-bottom: 20px;
+  }
+  .page-form-para {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--cl-text-muted);
+    margin-bottom: 48px;
+  }
+  .events-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+  }
+  .form-field-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-field-group.full { grid-column: 1 / -1; }
+  .form-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.8);
+  }
+  .form-field {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--cl-text-cream);
+    background: rgba(249, 246, 239, 0.05);
+    border: 1px solid var(--cl-gold-border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    width: 100%;
+    min-height: 48px;
+    outline: none;
+    transition: border-color 0.18s ease, background 0.18s ease;
+    -webkit-appearance: none;
+  }
+  .form-field:focus {
+    border-color: rgba(201, 168, 76, 0.55);
+    background: rgba(249, 246, 239, 0.09);
+  }
+  textarea.form-field { min-height: 120px; resize: vertical; line-height: 1.6; }
+  .form-submit { grid-column: 1 / -1; text-align: center; margin-top: 16px; }
+  .form-success {
+    display: none;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--cl-gold);
+    line-height: 1.6;
+    text-align: center;
+  }
+  .form-success.visible { display: block; }
+  .events-form.hidden { display: none; }
+
+  /* Back link section */
+  .page-back {
+    background: var(--cl-cream);
+    text-align: center;
+    padding: 48px 40px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--cl-navy-deep);
+    color: var(--cl-text-cream);
+    position: relative;
+    padding: 96px 0 32px;
+    border-top: 1px solid var(--cl-gold-border);
+  }
+  .footer-pearl {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .footer-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .footer-brand { text-align: center; margin-bottom: 64px; }
+  .footer-brand .site-logo {
+    height: 160px;
+    width: auto;
+    display: inline-block;
+  }
+  .footer-brand .descriptor {
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-gold);
+  }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    max-width: 640px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cl-text-cream);
+    margin-bottom: 8px;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--cl-text-cream);
+    text-decoration: none;
+    display: block;
+  }
+  .footer-col a:hover { color: var(--cl-gold); }
+  .footer-col .footer-email {
+    display: inline-block;
+    border: 1px solid var(--cl-gold-border);
+    border-radius: 2px;
+    padding: 8px 20px;
+    color: var(--cl-gold);
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .footer-col .footer-email:hover {
+    background: var(--cl-gold-glow);
+    border-color: var(--cl-gold);
+    color: var(--cl-gold-light);
+  }
+  .footer-social {
+    display: inline-flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cl-gold);
+    opacity: 1;
+    transition: opacity 0.18s ease, transform 0.18s ease, color 0.18s ease;
+  }
+  .footer-social a:hover {
+    transform: scale(1.15);
+    color: var(--cl-gold-light);
+  }
+  .footer-social svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+  .footer-copy {
+    border-top: 1px solid var(--cl-gold-border);
+    padding-top: 24px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--cl-text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Reveals */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.22s; }
+  .reveal-d3 { transition-delay: 0.34s; }
+  .reveal-d4 { transition-delay: 0.46s; }
+
+  /* Mobile */
+  @media (max-width: 1024px) {
+    .container { padding: 0 24px; }
+  }
+  @media (max-width: 768px) {
+    .events-form { grid-template-columns: 1fr; }
+    .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    .nav-inner { padding: 0 20px; grid-template-columns: 1fr auto; }
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: inline-flex; align-items: center; justify-content: center; justify-self: end; }
+    .page-hero { padding: 140px 24px 72px; min-height: 400px; }
+    .page-copy-inner { padding: 72px 24px; }
+    .page-form { padding: 72px 24px; }
+    .footer-inner { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="site-wordmark">Caviar Louie</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html#events">Events</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#events" class="btn-primary nav-cta">Reserve Your Experience</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="index.html#about">About</a>
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#events">Events</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#events" class="btn-primary" style="justify-content: center; margin-top: 8px;">Reserve Your Experience</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="page-hero-pearl pearl-texture"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow reveal">Caviar Louie</p>
+    <h1 class="page-hero-title reveal reveal-d1">Birthdays</h1>
+    <p class="page-hero-subhead reveal reveal-d2">Another year older. Infinitely more fabulous.</p>
+    <div class="page-hero-rule reveal reveal-d3"></div>
+  </div>
+</header>
+
+<!-- COPY -->
+<section class="page-copy">
+  <div class="pearl-bg pearl-texture-light"></div>
+  <div class="page-copy-inner">
+    <p class="italic-line opener reveal">Another year older. Infinitely more fabulous.</p>
+    <div class="body reveal reveal-d1">
+      <p>Birthdays are not the time for modesty. They are the time for black caviar, cold champagne, your closest people, and a cart that rolls in like it owns the room, because it does.</p>
+      <p>Whether it's a milestone or just another excuse to celebrate yourself, Caviar Louie makes sure this birthday is the one they never forget.</p>
+    </div>
+    <p class="italic-line closer reveal reveal-d2">The celebration that started it all.</p>
+    <div class="page-copy-rule reveal reveal-d3"></div>
+  </div>
+</section>
+
+<!-- PHOTO -->
+<div class="page-photo">
+  <div class="page-photo-pearl pearl-texture"></div>
+  <span class="page-photo-label">Photography coming soon.</span>
+</div>
+
+<!-- FORM -->
+<section class="page-form" id="inquiry">
+  <div class="page-form-pearl pearl-texture"></div>
+  <div class="page-form-inner">
+    <p class="page-form-eyebrow reveal">Book the Cart</p>
+    <h2 class="page-form-h2 reveal reveal-d1">Reserve Your Birthday Experience</h2>
+    <p class="page-form-para reveal reveal-d2">Tell us about the birthday. We'll make sure it's one for the books.</p>
+    <form class="events-form reveal reveal-d3" id="inquiry-form" action="https://formspree.io/forms/mdajgwyw" method="POST">
+      <input type="hidden" name="occasion" value="Birthday">
+      <input type="hidden" name="_subject" value="New Caviar Louie Birthday Inquiry">
+      <div class="form-field-group">
+        <label class="form-label" for="iq-name">Name</label>
+        <input class="form-field" type="text" id="iq-name" name="name" required>
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="iq-email">Email</label>
+        <input class="form-field" type="email" id="iq-email" name="email" required>
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="iq-phone">Phone</label>
+        <input class="form-field" type="tel" id="iq-phone" name="phone">
+      </div>
+      <div class="form-field-group">
+        <label class="form-label" for="iq-date">Event Date</label>
+        <input class="form-field" type="text" id="iq-date" name="event_date" placeholder="MM / DD / YYYY">
+      </div>
+      <div class="form-field-group full">
+        <label class="form-label" for="iq-party">Party Size</label>
+        <input class="form-field" type="number" id="iq-party" name="party_size" min="2" max="500">
+      </div>
+      <div class="form-field-group full">
+        <label class="form-label" for="iq-message">Message</label>
+        <textarea class="form-field" id="iq-message" name="message" rows="4" placeholder="Tell us about the celebration you are planning."></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Reserve Your Birthday Experience</button>
+      </div>
+    </form>
+    <p class="form-success" id="form-success">Thank you. We'll be in touch shortly.</p>
+  </div>
+</section>
+
+<!-- BACK -->
+<section class="page-back">
+  <a href="index.html#events" class="btn-ghost btn-ghost-on-cream">← View All Occasions</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-pearl pearl-texture"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Caviar_Louie.png" alt="Caviar Louie - St. Louis Mobile Caviar Bar" class="site-logo">
+      <div class="descriptor">St. Louis Caviar Bar</div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@caviarlouie.com" class="footer-email">hello@caviarlouie.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div class="footer-social">
+          <a href="https://instagram.com/caviarlouie" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@caviarlouie" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/caviarlouie" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/company/caviarlouie" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copy">© 2025 Caviar Louie. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var nav = document.getElementById('site-nav');
+    function onScroll() {
+      if (window.scrollY > 16) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    var hamburger = document.getElementById('nav-hamburger');
+    var mobile = document.getElementById('nav-mobile');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () { mobile.classList.toggle('open'); });
+      mobile.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { mobile.classList.remove('open'); });
+      });
+    }
+
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    var form = document.getElementById('inquiry-form');
+    var success = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            form.classList.add('hidden');
+            success.classList.add('visible');
+          } else {
+            form.submit();
+          }
+        }).catch(function () { form.submit(); });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

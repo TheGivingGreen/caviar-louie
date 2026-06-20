@@ -267,6 +267,8 @@
     z-index: 0;
     pointer-events: none;
   }
+  #hero-video::-webkit-media-controls { display: none !important; }
+  #hero-video::-webkit-media-controls-start-playback-button { display: none !important; }
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -1217,7 +1219,7 @@
 
 <!-- HERO -->
 <section id="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="">
+  <video id="hero-video" class="hero-video" autoplay muted loop playsinline webkit-playsinline poster="">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
